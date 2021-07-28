@@ -767,7 +767,7 @@ module.exports = nino = async (nino, mek) => {
 		    atm.addKoinUser(sender, randomNomor(100), _uang)
 		    nino.sendMessage(from, teks, text, {quoted: freply })
 }
-	    if (isCmd && !isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://nino-chan02.github.io`)
+	    if (isCmd && !isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://rizkiadiasa.github.io`)
       
             switch(command){
            

@@ -1,1 +1,1 @@
-worker: node nino.js
+worker: npm start

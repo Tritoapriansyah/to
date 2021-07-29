@@ -23,7 +23,7 @@ exports.gameMenu = (prefix) => {
 ├ ❏ ${prefix}tebakbendera
 ├ ❏ ${prefix}suit *batu/kertas/gunting*
 │
-└──「 *NINO BOT* 」
+└──「 * BOT* 」
 `
 }
 exports.funMenu = (prefix) => {
@@ -51,7 +51,7 @@ exports.funMenu = (prefix) => {
 ├ ❏ ${prefix}cekganteng
 ├ ❏ ${prefix}cekcantik
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 }
 exports.otherMenu = (prefix) => {
@@ -73,7 +73,7 @@ exports.otherMenu = (prefix) => {
 ├ ❏ ${prefix}img2url *reply foto*
 ├ ❏ ${prefix}ytsearch *query*
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 }
 exports.stickerMenu = (prefix) => {
@@ -95,7 +95,7 @@ exports.stickerMenu = (prefix) => {
 ├ ❏ ${prefix}take *pack|author* 
 ├ ❏ ${prefix}tovideo *reply sgif*
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 }
 exports.wibuMenu = (prefix) => {
@@ -130,7 +130,7 @@ exports.wibuMenu = (prefix) => {
 ├ ❏ ${prefix}nekopoicosplay
 ├ ❏ ${prefix}nekopoisearch
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 }
 exports.ownerMenu = (prefix) => {
@@ -152,7 +152,7 @@ exports.ownerMenu = (prefix) => {
 ├ ❏ ${prefix}premium add @tag|nomor
 ├ ❏ ${prefix}premium del @tag|nomor
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 }
 
@@ -178,7 +178,7 @@ exports.groupMenu = (prefix) => {
 ├ ❏ ${prefix}sider *reply chat bot*
 ├ ❏ ${prefix}hidetag *teks/reply teks*
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 }
 exports.downloadMenu = (prefix) => {
@@ -200,7 +200,7 @@ exports.downloadMenu = (prefix) => {
 ├ ❏ ${prefix}mediafire 
 ├ ❏ ${prefix}nhentaipdf *code*
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 }
 exports.rulesBot = (prefix) => {
@@ -218,7 +218,7 @@ Sanksi: *PERMANENT BLOCK*
 
 Jika sudah dipahami rules-nya, silakan ketik *#menu* untuk memulai!
 
-Owner Nino BOT:
+Owner  BOTZ:
 wa.me/6288286421519
 `
 }
@@ -244,6 +244,6 @@ return `
 ├ ❏ ${prefix}sourcecode
 ├ ❏ ${prefix}bugreport *keluhan*
 │
-└──「 *NINO BOT* 」
+└──「 * BOTZ* 」
 `
 } 

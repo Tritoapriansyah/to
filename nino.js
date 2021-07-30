@@ -801,18 +801,19 @@ headerType: 4
 }
 ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 }
-           case 'menu':
+                   case 'menu':
         case 'help':
+               if (!isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://rizkiadiasa.github.io`)
                menu =`Hai Kak ${pushname}
-Saya Iky, Bot WhatsApp yang membantu kamu mempermudah sesuatu seperti Membuat Sticker dan Lainnya, ada Butuh Info Dariku`
+Saya ikyyBot, Bot WhatsApp yang membantu kamu mempermudah sesuatu seperti Membuat Sticker dan Lainnya, ada Butuh Info Dariku\n💌 Contacts Owner 💌\nIkyadsreal@gmail.com`
 
-               buttons = [{buttonId: '!command',buttonText:{displayText: 'COMMAND'},type:1},{buttonId:'!rules',buttonText:{displayText:'RULES'},type:1}]
+               buttons = [{buttonId: `${prefix}command`,buttonText:{displayText: 'COMMAND'},type:1},{buttonId:`${prefix}rules`,buttonText:{displayText:'RULES'},type:1}]
 
-               imageMsg = ( await ikyy.prepareMessage(from, fs.readFileSync(`./media/Menu.jpg`), 'imageMessage')).message.imageMessage
+               imageMsg = ( await ikyy.prepareMessage(from, fs.readFileSync(`./media/Menu.jpg`), 'imageMessage',{thumbnail: Buffer.alloc(0)})).message.ephemeralMessage.message.imageMessage
 
                buttonsMessage = {
                contentText: `${menu}`,
-               footerText: 'Note: Kalo mau pake wa lama atau mod ga keliatan', imageMessage: imageMsg,
+               footerText: 'Made with By Iky Ads \n Buy Sc Ini? Pc Owner', imageMessage: imageMsg,
                buttons: buttons,
                headerType: 4
 }
@@ -820,6 +821,7 @@ Saya Iky, Bot WhatsApp yang membantu kamu mempermudah sesuatu seperti Membuat St
                prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: freply})
                ikyy.relayWAMessage(prep)
                break
+        
         case 'command':
                list = []
                listmenu = [`groupmenu`,`wibumenu`,`stickermenu`,`ownermenu`,`gamemenu`,`funmenu`,`downloadmenu`,`infomenu`,`othermenu`,`owner`,`ikyygroup`,`sewabot`]
@@ -1891,19 +1893,56 @@ _*Tunggu Proses Upload Media......*_`
               ikyy.sendMessage(from, gambar, image, { quoted: mek, thumbnail: Buffer.alloc(0) })
 })
               break
-       case 'waifu':
-       case 'loli':
        case 'husbu':
        case 'milf':
-       case 'cosplay':
        case 'wallml':
+              if (!isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://rizkiadiasa.github.io`)
               let wipu = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/${command}.json`)).data
               let wipi = wipu[Math.floor(Math.random() * (wipu.length))]
               fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi))
-		      buttons = [{buttonId: `#${command}`,buttonText:{displayText: `➡️Next`},type:1},{buttonId:'listimage',buttonText:{displayText:'🔁List Image'},type:1}]
-              imageMsg = ( await ikyy.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage')).message.imageMessage
+		      buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1},{buttonId:'listimage',buttonText:{displayText:'🔁List Image'},type:1}]
+              imageMsg = ( await ikyy.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.ephemeralMessage.message.imageMessage
               buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
               contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
+              prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
+              ikyy.relayWAMessage(prep)
+              fs.unlinkSync(`./${sender}.jpeg`)
+              break
+       case 'waifu':
+              if (!isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://rizkiadiasa.github.io`)
+              let wipu1 = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/waifu.json`)).data
+              let wipi3 = wipu1[Math.floor(Math.random() * (wipu.length))]
+              fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi3))
+		      buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `!waifu`},type:1},{buttonId:'listimahge', buttonText:{displayText:'!menu'},type:1}]
+              imageMsg = ( await ikyy.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.ephemeralMessage.message.imageMessage
+              buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
+              contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
+              prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
+              ikyy.relayWAMessage(prep)
+              fs.unlinkSync(`./${sender}.jpeg`)
+              break
+case 'loli':
+              if (!isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://rizkiadiasa.github.io`)
+              let wipik = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/loli.json`)).data
+              let wipi1 = wipik[Math.floor(Math.random() * (wipik.length))]
+              fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi1))
+		      buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `!loli`},type:1},{buttonId:'listimage',buttonText:{displayText:'!menu'},type:1}]
+              imageMsg = ( await ikyy.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.ephemeralMessage.message.imageMessage
+              buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
+              contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
+              prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
+              ikyy.relayWAMessage(prep)
+              fs.unlinkSync(`./${sender}.jpeg`)
+              break
+     case 'cosplay':
+              if (!isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://rizkiadiasa.github.io`)
+              let wiki = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/cosplay.json`)).data
+              let kntl1 = wiki[Math.floor(Math.random() * (wiki.length))]
+              fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(kntl1))
+		      buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `!cosplay`},type:1},{buttonId:'listimage',buttonText:{displayText:'!menu'},type:1}]
+              imageMsg = ( await ikyy.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.ephemeralMessage.message.imageMessage
+              buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
+              contentText:`klik Cosplay untuk ke gambar selanjut nya`,buttons,headerType:4}
               prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               ikyy.relayWAMessage(prep)
               fs.unlinkSync(`./${sender}.jpeg`)
@@ -2006,11 +2045,11 @@ let thumbInfo = ` *Youtube Search*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: thumbInfo})
+sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
-sendFileFromUrl(res[0].link, audio, {quoted: ftoko, mimetype: 'audio/mp4', filename: res[0].output})
+sendFileFromUrl(res[0].link, audio, {quoted: mek, mimetype: 'audio/mp4', filename: res[0].output})
 }
 if (teks.endsWith("-doc")){
 const tec = teks.split("-doc")
@@ -2029,11 +2068,11 @@ let thumbInfo = `*${botname}*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: thumbInfo})
+sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
-sendFileFromUrl(res[0].link, document, {quoted: ftoko, mimetype: 'audio/mp3', filename: res[0].output})
+sendFileFromUrl(res[0].link, document, {quoted: mek, mimetype: 'audio/mp3', filename: res[0].output})
 }
 break
           case 'lirik':
@@ -2481,85 +2520,62 @@ break
 			case 'stickergif':  
 				case 'sticker':
 				  case 'stiker':
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						await ffmpeg(`./${media}`)
-							.input(media)
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								reply(mess.error.stick)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								buff = fs.readFileSync(ran)
-								ikyy.sendMessage(from, fs.readFileSync(ran), sticker, { contextInfo: { participant: `${numbernye}@s.whatsapp.net`, quotedMessage: { conversation: '*ikyy-SELF*' } } }) 
-								fs.unlinkSync(media)
-								fs.unlinkSync(ran)
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
-						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						reply('Loading.... ')
-						await ffmpeg(`./${media}`)
-							.inputFormat(media.split('.')[1])
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`Yah error dek`)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								buff = fs.readFileSync(ran)
-								ikyy.sendMessage(from, buff, sticker, {quoted: troli})
-								fs.unlinkSync(media)
-								fs.unlinkSync(ran)
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else if ((isMedia || isQuotedImage) && args[0] == 'nobg') {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-						ranw = getRandom('.webp')
-						ranp = getRandom('.png')
-						reply('Loading.... ')
-						keyrmbg = '5LXrQ1MAYDnE1iib6B6NaHMv'
-						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg.result, size: 'auto', type: 'auto', ranp}).then(res => {
-							fs.unlinkSync(media)
-							let buffer = Buffer.from(res.base64img, 'base64')
-							fs.writeFileSync(ranp, buffer, (err) => {
-								if (err) return reply('Yah error dek')
-							})
-							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
-								fs.unlinkSync(ranp)
-								if (err) return reply(mess.error.stick)
-								buff = fs.readFileSync(ranw)
-								ikyy.sendMessage(from, buff, sticker, {quoted: mek})
-							})
-						    })					
-					} else {
-						reply(`𝗸𝗶𝗿𝗶𝗺 𝗴𝗮𝗺𝗯𝗮𝗿 𝗱𝗲𝗻𝗴𝗮𝗻 𝗰𝗮𝗽𝘁𝗶𝗼𝗻 ${prefix}𝘀𝘁𝗶𝗰𝗸𝗲𝗿 𝗮𝘁𝗮𝘂 𝗿𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝗴𝗮𝗺𝗯𝗮𝗿`)
-					}
-					break
-					
+					     if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+            const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+            const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
+                ran = '666.webp'
+                await ffmpeg(`./${media}`)
+                .input(media)
+                .on('start', function (cmd) {
+                     console.log(`Started : ${cmd}`)
+                })
+                .on('error', function (err) {
+                 console.log(`Error : ${err}`)
+                fs.unlinkSync(media)
+                reply('error')
+                })
+                .on('end', function () {
+                console.log('Finish')
+                ikyy.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+                 fs.unlinkSync(media)
+                fs.unlinkSync(ran)
+                })
+                .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                .toFormat('webp')
+                .save(ran)
+                } else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
+                const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+                const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
+            ran = '999.webp'
+            reply(mess.wait)
+            await ffmpeg(`./${media}`)
+            .inputFormat(media.split('.')[1])
+            .on('start', function (cmd) {
+            console.log(`Started : ${cmd}`)
+            })
+            .on('error', function (err) {
+            console.log(`Error : ${err}`)
+            fs.unlinkSync(media)
+            tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+            reply(`Gagal, pada saat mengkonversi ${tipe} ke stiker`)
+            })
+            .on('end', function () {
+            console.log('Finish')
+            ikyy.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+            fs.unlinkSync(media)
+            fs.unlinkSync(ran)
+                })
+                .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                .toFormat('webp')
+                .save(ran)
+            } else {
+                reply(`Kirim gambar dengan caption ${prefix}sticker\nDurasi Sticker Video 1-9 Detik`)
+            }
+            break               
        case 'take':
        case 'colong':
               if (!isQuotedSticker) return reply('Stiker aja om')
-              encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              encmedia = JSON.parse(JSON.strngify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
               media = await ikyy.downloadAndSaveMediaMessage(encmedia)
               anu = args.join(' ').split('|')
               satu = anu[0] !== '' ? anu[0] : `${pushname}`
@@ -3287,18 +3303,14 @@ teks = `\`\`\`BOT STATISTICS\`\`\`
 ├ *BOT TYPE* : NodeJS
 ├ *NAME*  : ikyy
 ├ *VERSION* : 1.0
-├ *GITHUB* : ikyy-chan02
+├ *GITHUB* : Rizkiadiasa
 │
 ├─「 *𝙏𝙃𝘼𝙉𝙆𝙎 𝙏𝙊* 」
 │
 ├ ALLAH SWT
-├ EMAK
-├ ARIP
-├ MHANKBARBAR
-├ AQUL
-├ SLAVYAN
-├ GALANG
-├ FRANKY
+├ Nino Chan
+├ Xinz Bot
+├ Arif
 ├ And all creator bot
 │
 └──「 *${botName}* 」`
@@ -3322,7 +3334,8 @@ teks = `\`\`\`BOT STATISTICS\`\`\`
              reply(txtx.slice(0, 65536) + '')
 }
              break
-      case 'searchmsg':  //by ANU TEAM
+      case 'searchmsg': 
+case 'caripesan':  //by ANU TEAM
              if (args.length < 1) return reply(`Pesan Yang Mau Dicari Apaan?\nContoh : ${prefix + command} halo|10`)
              teks = arg
              if (teks.includes("|")) { 
@@ -3734,8 +3747,17 @@ ${ttt}`
  ikyy.sendMessage(from, ucapan, text, {quoted: mek, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
 } else {
 }
+if (budy.startsWith('>')){
+if (!mek.key.fromMe && !isOwner) return
+try {
+return ikyy.sendMessage(from, JSON.stringify(eval(budy.slice(2)),null,'\t'),text, {quoted: mek})
+} catch(err) {
+e = String(err)
+reply(e)
+}
+}
 if (!isOwner) return
-if (budy.startsWith('> ')) {
+if (budy.startsWith('+')) {
 try {
 console.log(color('[ EVAL ]', 'pink'), color(time), budy, color('dari', 'yellow'), pushname, color('di'), isGroup ? groupName : 'Private Chat')
 reply(require('util').format(eval(`;(async () => { ${budy.slice(2)} })()`)))
@@ -3753,7 +3775,7 @@ if (!isGroup && isCmd && !mek.key.fromMe){
 teks = `Maaf @${senderr.split('@')[0]}, command ${prefix + command} tidak ada dalam menu`
 ikyy.sendMessage(from, {text:teks, jpegThumbnail:fs.readFileSync('./media/wpmobile.png')}, 'extendedTextMessage', {sendEphemeral:true, quoted:mek, contextInfo:{ forwardingScore:508, isForwarded:true, mentionedJid:[senderr]}})
 }
-	}
+	} 
 if (isGroup && budy != undefined) {
 } else {
 console.log('[',color('TEXT','teal'),']',`Message : ${budy} From`, color(pushname))

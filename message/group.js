@@ -8,6 +8,7 @@ const { getBuffer } = require('../lib/myfunc')
 const { color, bgcolor } = require('../lib/color')
 
 let setting = JSON.parse(fs.readFileSync('./setting.json'))
+prefix = setting.prefix
 
 module.exports = welcome = async (nino, anu) => {
 	    const welkom = JSON.parse(fs.readFileSync('./database/group/welcome.json'))
@@ -27,7 +28,7 @@ module.exports = welcome = async (nino, anu) => {
                 pp_grup = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
             }
             if (anu.action == 'add' && mem.includes(nino.user.jid)) {
-            nino.sendMessage(anu.jid, 'Halo! Terima Kasih sudah Mengundangku, Jika ingin Menggunakan Bot Ketik !menu', 'conversation')
+            nino.sendMessage(anu.jid, `Halo! Terima Kasih sudah Mengundangku, Jika ingin Menggunakan Bot Ketik ${prefix}menu`, 'conversation')
             }
              if (anu.action == 'add' && !mem.includes(nino.user.jid)) {
              if (!welkom.includes(anu.jid)) return
@@ -37,7 +38,7 @@ module.exports = welcome = async (nino, anu) => {
                 let v = nino.contacts[num] || { notify: num.replace(/@.+/, '') }
                 anu_user = v.vname || v.notify || num.split('@')[0]
                 time_wel = moment.tz('Asia/Jakarta').format("HH:mm")
-                teks = `Halo ${anu_user} \n\nNama : \nUmur :\nGender : \nAsal :\n\nSemoga Betah dan jangan lupa isi`
+                teks = `Halo ${anu_user} \n\nNama : \nUmur :\nGender : \nAsal :\n\nSemoga Betah dan jangan lupa isi\nAnd Following Rules Group\n${mdata.desc}`
 	            buff = await getBuffer(`https://hardianto-chan.herokuapp.com/api/tools/welcomer2?name=${encodeURI(anu_user)}&descriminator=${time_wel}&totalmem=${memeg}&namegb=${encodeURI(mdata.subject)}&ppuser=${pp_user}&background=https://telegra.ph/file/9c41931cada0cfe68b8b7.jpg&apikey=hardianto`)
 		        nino.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 		}

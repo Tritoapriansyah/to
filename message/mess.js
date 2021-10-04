@@ -1,10 +1,10 @@
 module.exports.mess = {
-	        wait: 'Loading...',
-			success: 'Oke Desu~',
+	        wait: '*Tunggu Permintaan Anda Kami Sedang Proses*',
+			success: '_Sukses_',
 			wrongFormat: 'Format salah, coba liat lagi di menu',
 			error: {
-				api: 'Ups, terjadi kesalahan',
-				stick: 'bukan sticker itu:v',
+				api: 'maaf terjadi kesalahan',
+				stick: 'bukan sticker',
 				Iv: 'Link tidak valid'
 			},
 			only: {

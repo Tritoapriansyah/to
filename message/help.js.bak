@@ -211,7 +211,7 @@ Usage : *${prefix}cekcantik*
 }
 exports.otherMenu = (prefix) => {
     return `
-  *• OTHER-MENU*
+  *${prefix}  OTHER-MENU 
 
 🌹 *${prefix}brainly *query*
 🌹 *${prefix}shopee*  _*product*_
@@ -463,9 +463,9 @@ exports.ownerMenu = (prefix) => {
 🌹 *${prefix}shutdown*
 🌹 *${prefix}addupdate* fiturnya
 🌹 *${prefix}leaveall*
-🌹 *${prefix}sewa* _*add/del waktunya*_
-🌹 *${prefix}exif* _*nama|author*_
-🌹 *${prefix}premium* _*del @tag|nomor_*
+🌹 *${prefix}sewa add/del waktunya
+🌹 *${prefix}exif nama|author
+🌹 *${prefix}premium* del @tag|nomor
 
 `
 }
@@ -661,42 +661,4 @@ return `
 
 
 `
-}
-exports.sewamenu = (prefix) => {
-return `
-*── 「 PRICE LIST 」 ──*
-
-*Tarif Premium User adalah 10K Perbulan*
-*Keuntungan Premium Diantaranya:*
-♲ *Bebas memakai fitur premium*
-♲ *Dapat Informasi Lebih dulu akan Update, Nomor Bot Baru (Jika Terbanned), dan Lainnya*
-
-*Jika Tertarik,Kalian Bisa Bayar Melalui Metode Pembayaran di Bawah:*
-*Dana : 082334170916*
-*Gopay : 082334170916*
-*Atau Gopay pada gambar diatas*
-
-*= Rp. 20.000 /PERBULAN*
-*= Rp. 35.000 /PERMANEN*
-*= RP. 100.000 /JADIOWNER*
-
-Di Sponsori Oleh *@0*
-*Info Lebih Lengkap Chat Owner, Ketik ${prefix}owner*
-*_note_*:
-*Pembelian Premium yang disertai SewaBot hanya akan membayar 20K (Diskon 5K)*
-`
-}
-exports.infoowner = (prefix) => {
-return `
-Owner = wa.me/6281916849086
-
-YouTube = Fax Botz
-
-Grup Whatsapp = https://chat.whatsapp.com/GlAuhF2Sh8n4blusjELDrL
-
-Grup Whatsapp 2 = https://chat.whatsapp.com/J17gfDmyKHN33IyWnynzvh
-
-Instagram = _>\< G ada wkwkwk
-
-`
-}
+} 

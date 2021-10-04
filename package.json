@@ -1,5 +1,5 @@
 {
-  "name": "NinoWangy",
+  "name": "Jangan-Ubah-Iky-Ads",
   "version": "1.0.0",
   "description": "Gak Ada",
   "main": "main.js",
@@ -12,7 +12,7 @@
   },
   "author": "nino",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.4.1",
+  "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "axios": "^0.21.1",
     "brainly-scraper": "^1.0.3",
     "chalk": "^4.1.1",
@@ -22,7 +22,6 @@
     "form-data": "^4.0.0",
     "fs-extra": "^10.0.0",
     "g-i-s": "^2.1.6",
-    "google-it": "^1.6.2",
     "got": "^11.8.2",
     "imgbb-uploader": "^1.3.3",
     "jsdom": "^16.6.0",
@@ -38,12 +37,16 @@
     "util": "^0.12.4",
     "yt-search": "^2.8.0"
   },
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nino-chan02/NinoWangy"
+    "url": "git+https://github.com/rizkiadiasa/NinoWangy"
   },
   "bugs": {
-    "url": "https://github.com/Nino-chan02/NinoWangy/issues"
+    "url": "https://github.com/rizkiadiasa/NinoWangy/issues"
   },
-  "homepage": "https://github.com/Nino-chan02/NinoWangy#readme"
+  "homepage": "https://github.com/rizkiadiasa/NinoWangy#readme"
 }

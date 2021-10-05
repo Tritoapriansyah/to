@@ -672,8 +672,8 @@ return `
 ♲ *Dapat Informasi Lebih dulu akan Update, Nomor Bot Baru (Jika Terbanned), dan Lainnya*
 
 *Jika Tertarik,Kalian Bisa Bayar Melalui Metode Pembayaran di Bawah:*
-*Dana : 082334170916*
-*Gopay : 082334170916*
+*Dana : 085888258313*
+*Gopay : 085888258313*
 *Atau Gopay pada gambar diatas*
 
 *= Rp. 20.000 /PERBULAN*
@@ -688,13 +688,11 @@ Di Sponsori Oleh *@0*
 }
 exports.infoowner = (prefix) => {
 return `
-Owner = wa.me/6281916849086
+Owner = wa.me/6285888258313
 
-YouTube = Fax Botz
+YouTube = gk punya
 
-Grup Whatsapp = https://chat.whatsapp.com/GlAuhF2Sh8n4blusjELDrL
-
-Grup Whatsapp 2 = https://chat.whatsapp.com/J17gfDmyKHN33IyWnynzvh
+Grup Whatsapp = gk punya
 
 Instagram = _>\< G ada wkwkwk
 
